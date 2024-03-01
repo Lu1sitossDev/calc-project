@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.container-num{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.container-func{
+    display: flex;
+}
+
+.container-operators{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+}
+
+.display{
+    width: 400px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgba(172, 255, 47, 0.733);
+    font-weight: bold;
+}
+
+.btn{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.377);
+}
+
+#C, #AC{
+    width: 200px;
+}
+
+.operators{
+    background-color: rgba(27, 27, 27, 0.377);
+}
