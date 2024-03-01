@@ -42,7 +42,10 @@ let btnArray = Array.from(btn)
               .map((button) => button.textContent = button.id);
 
 const display = document.querySelector('.display');
-
+const line1 = document.querySelector('.l1');
+const line2 = document.querySelector('.l2');
+line1.textContent = "a";
+line2.textContent = "b"
 
 const containerNum = document.querySelector('.container-num');
 containerNum.addEventListener('click',(e) => {
@@ -55,13 +58,16 @@ containerNum.addEventListener('click',(e) => {
         secondNum += id;
     }
     
-    display.textContent = `${firstNum} ${operator} ${secondNum} ${result}`;
+    line1.textContent = `${firstNum} ${operator} ${secondNum}`;
+    line2.textContent = `${result}`;
     if(result != ""){
         lastResult = result;
         result = "";
         firstNum = lastResult;
         secondNum = "";
     }
+    
+    
 });
 
 const containerOperators = document.querySelector('.container-operators');
@@ -85,6 +91,9 @@ containerOperators.addEventListener('click', (e) => {
             break;
     }
 
+    line1.textContent = `${firstNum} ${operator} ${secondNum}`;
+    line2.textContent = `${result}`;
+
     if(result != ""){
         lastResult = result;
         result = "";
@@ -92,11 +101,15 @@ containerOperators.addEventListener('click', (e) => {
         secondNum = "";
         operator = id;
     }
-    display.textContent = `${firstNum} ${operator} ${secondNum} ${result}`;
+    
+    
 })
 
 const equalBtn = document.querySelector('.equal');
-equalBtn.addEventListener('click', () => result = operate(operator,+firstNum,+secondNum))
+equalBtn.addEventListener('click', () => {
+    result = operate(operator,+firstNum,+secondNum)
+    line1.textContent = `${firstNum} ${operator} ${secondNum}`
+});
 
 const containerFunc = document.querySelector('.container-func');
 containerFunc.addEventListener('click', (e) => {
@@ -117,8 +130,8 @@ containerFunc.addEventListener('click', (e) => {
             secondNum = secondNum.slice(secondNum.lenght-2, secondNum.length-1)
         }
     }
-
-    display.textContent = `${firstNum} ${operator} ${secondNum} ${result}`;
+    line1.textContent = `${firstNum} ${operator} ${secondNum}`
+    line2.textContent = `${result}`
 })
 
 
